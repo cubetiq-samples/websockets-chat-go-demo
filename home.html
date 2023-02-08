@@ -30,8 +30,9 @@
                 };
 
                 if (window['WebSocket']) {
+                    let wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
                     conn = new WebSocket(
-                        'ws://' + document.location.host + '/ws'
+                        wsProtocol + '//' + document.location.host + '/ws'
                     );
                     conn.onclose = function (evt) {
                         var item = document.createElement('div');
