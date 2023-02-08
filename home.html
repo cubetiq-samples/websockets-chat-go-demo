@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Chat Example</title>
+        <title>Chat App</title>
         <script type="text/javascript">
             window.onload = function () {
+                console.log('Initializing websocket client...');
+
                 var conn;
                 var msg = document.getElementById('msg');
                 var log = document.getElementById('log');
