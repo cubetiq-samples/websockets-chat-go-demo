@@ -30,10 +30,12 @@
                 };
 
                 if (window['WebSocket']) {
-                    let wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-                    conn = new WebSocket(
-                        wsProtocol + '//' + document.location.host + '/ws'
-                    );
+                    let wsProtocol =
+                        window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+                    let url =
+                        wsProtocol + '//' + document.location.host + '/ws';
+                    console.log('Connecting to websocket url: ' + url);
+                    conn = new WebSocket(url);
                     conn.onclose = function (evt) {
                         var item = document.createElement('div');
                         item.innerHTML = '<b>Connection closed.</b>';
